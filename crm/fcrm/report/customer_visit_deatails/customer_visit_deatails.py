@@ -45,6 +45,7 @@ def execute(filters=None):
             vis.description,
 			vis.visited_by,
             vis.purpose_of_visit,
+            vis.other_purpose_of_visit,
             vis.accompanied_by
         FROM `tabCustomer Visit Form` vis
         INNER JOIN `tabCRM Organization` org
@@ -61,6 +62,7 @@ def execute(filters=None):
         {"label": "Remarks", "fieldname": "description", "fieldtype": "Data", "width": 250},
 		{"label": "Visited By", "fieldname": "visited_by", "fieldtype": "Data", "width": 250},
         {"label": "Purpose Of Visit", "fieldname": "purpose_of_visit", "fieldtype": "Data", "width": 250},
+        {"label": "Other Purpose Of Visit", "fieldname": "other_purpose_of_visit", "fieldtype": "Data", "width": 250},
         {"label": "Accompained By", "fieldname": "accompanied_by", "fieldtype": "Link","options":"User", "width": 250},
 
     ]

@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "CRM",
  "links": [],
- "modified": "2026-03-12 13:48:56.477338",
+ "modified": "2026-06-25 14:14:39.750324",
  "modified_by": "Administrator",
  "module": "FCRM",
  "name": "CRM",
@@ -46,7 +46,7 @@
    "doc_view": "List",
    "label": "Dashboard",
    "type": "URL",
-   "url": "http://10.101.0.165/dashboard"
+   "url": "http://lg.local"
   },
   {
    "color": "Grey",

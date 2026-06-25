@@ -560,8 +560,8 @@
    "link_fieldname": "deal"
   }
  ],
- "modified": "2026-03-25 17:04:23.468909",
- "modified_by": "khushi.rai@lgepartner.com",
+ "modified": "2026-06-25 14:19:20.510131",
+ "modified_by": "Administrator",
  "module": "FCRM",
  "name": "CRM Deal",
  "naming_rule": "By fieldname",
@@ -596,5 +596,7 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "track_changes": 1
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
 }

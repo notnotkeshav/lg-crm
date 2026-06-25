@@ -327,8 +327,8 @@
  "image_field": "organization_logo",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-06-25 10:19:34.877817",
- "modified_by": "khushi.rai@lgepartner.com",
+ "modified": "2026-06-25 14:18:59.325698",
+ "modified_by": "Administrator",
  "module": "FCRM",
  "name": "CRM Organization",
  "naming_rule": "By fieldname",
@@ -364,5 +364,8 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "organization_name"
+ "title_field": "organization_name",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
 }

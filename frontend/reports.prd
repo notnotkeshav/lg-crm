@@ -1,0 +1,199 @@
+# CRM Reports System PRD
+
+## Overview
+The CRM Reports System is designed to provide comprehensive analytics and insights across three main modules: Deals, Quotations, and Contracts. The system will maintain consistency with the existing Vue.js 3 stack and UI/UX design patterns.
+
+## System Architecture
+
+### 1. Directory Structure
+```
+src/
+├── pages/
+│   └── reports/
+│       ├── DealsReports.vue
+│       ├── QuotationsReports.vue
+│       └── ContractsReports.vue
+├── components/
+│   └── reports/
+│       ├── filters/
+│       │   ├── DateRangeFilter.vue
+│       │   └── ModuleSelector.vue
+│       ├── charts/
+│       │   ├── LineChart.vue
+│       │   ├── BarChart.vue
+│       │   └── PieChart.vue
+│       └── common/
+│           ├── KPICard.vue
+│           └── ReportListView.vue
+└── stores/
+    └── reports.js
+```
+
+### 2. Routing Structure
+```javascript
+{
+  path: '/reports',
+  name: 'Reports',
+  children: [
+    {
+      path: 'deals',
+      name: 'DealsReports',
+      component: () => import('@/pages/reports/DealsReports.vue')
+    },
+    {
+      path: 'quotations',
+      name: 'QuotationsReports',
+      component: () => import('@/pages/reports/QuotationsReports.vue')
+    },
+    {
+      path: 'contracts',
+      name: 'ContractsReports',
+      component: () => import('@/pages/reports/ContractsReports.vue')
+    }
+  ]
+}
+```
+
+## Features & Components
+
+### 1. Global Components
+
+#### DateRangeFilter
+- Presets: Last Week, Last Month, Last Year, Custom Range
+- Consistent with existing UI components
+- Reactive updates to all connected reports
+
+#### ModuleSelector
+- Switch between different report modules
+- Maintains selected module state
+- Updates sidebar active state
+
+### 2. Module-Specific Reports
+
+#### A. Deals Reports
+1. KPI Section
+   - Total Deal Value
+   - Deal Win Rate
+   - Average Deal Size
+   - Active Deals Count
+
+2. Charts
+   - Deal Pipeline Analysis
+   - Revenue Trend
+   - Territory Distribution
+   - Deal Type Distribution
+
+3. List View
+   - Similar to Deals.vue list view
+   - Additional analytics columns
+   - Export functionality
+
+#### B. Quotations Reports
+1. KPI Section
+   - Total Quote Value
+   - Conversion Rate
+   - Average Quote Value
+   - Active Quotes Count
+
+2. Charts
+   - Quotation Status Distribution
+   - Quote Value Trend
+   - Product Distribution
+   - Payment Terms Analysis
+
+3. List View
+   - Based on existing list view structure
+   - Quote-specific metrics
+   - Filterable columns
+
+#### C. Contracts Reports
+1. KPI Section
+   - Active Contracts Value
+   - Renewal Rate
+   - Average Contract Value
+   - Expiring Contracts Count
+
+2. Charts
+   - Contract Status Distribution
+   - Contract Value Trend
+   - Customer Segment Analysis
+   - Renewal Timeline
+
+3. List View
+   - Contract-specific columns
+   - Renewal tracking
+   - Risk indicators
+
+## Technical Implementation
+
+### 1. Data Management
+- Use existing Frappe backend APIs
+- Implement caching for report data
+- Batch loading for large datasets
+
+### 2. State Management
+- Extend existing stores pattern
+- Module-specific report states
+- Global filter state management
+
+### 3. Performance Considerations
+- Lazy loading of chart components
+- Data pagination in list views
+- Optimized re-rendering
+
+## UI/UX Guidelines
+
+### 1. Layout
+- Consistent with existing CRM design
+- Responsive grid system using Tailwind
+- Mobile-first approach
+
+### 2. Components
+- Match existing component styling
+- Use current color scheme
+- Maintain spacing patterns
+
+### 3. Interactions
+- Smooth transitions between views
+- Interactive chart tooltips
+- Responsive filters
+
+## Phase 1 Implementation Plan
+
+1. Core Infrastructure
+   - Setup routing structure
+   - Create base components
+   - Implement global filters
+
+2. Deals Reports
+   - Implement KPI cards
+   - Create basic charts
+   - Setup list view
+
+3. Quotations Reports
+   - Port deals structure
+   - Customize for quotations
+   - Add specific metrics
+
+4. Contracts Reports
+   - Adapt existing patterns
+   - Implement contract metrics
+   - Create specific views
+
+## Success Metrics
+- Report load time < 2s
+- Chart interaction delay < 100ms
+- List view scroll performance
+- Filter response time < 500ms
+
+## Dependencies
+- Existing Vue.js 3 stack
+- Frappe UI components
+- Current authentication system
+- Backend API endpoints
+
+## Notes
+- Maintain existing file structure
+- Use current component patterns
+- Follow established naming conventions
+- Preserve current routing logic 

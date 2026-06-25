@@ -1,0 +1,387 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:opportunity_id",
+ "creation": "2025-06-06 11:48:59.387746",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "details_tab",
+  "deal_information_section",
+  "register_date",
+  "status",
+  "probability",
+  "annual_revenue",
+  "column_break_enty",
+  "opportunity_id",
+  "deal_type",
+  "from_contract",
+  "deal_owner",
+  "customer_information_section",
+  "customer_name",
+  "industry",
+  "column_break_ylzn",
+  "region",
+  "branch",
+  "subsidiary_information_section",
+  "organization",
+  "column_break_hevz",
+  "tab_7_tab",
+  "contact_information_section",
+  "email",
+  "phone",
+  "address_information_section",
+  "customer_address",
+  "column_break_booz",
+  "shipping_address",
+  "address_and_contact_section",
+  "address_html",
+  "column_break_njvl",
+  "shipping_address_html",
+  "product_information_tab",
+  "product_details",
+  "sla_tab",
+  "sla",
+  "sla_creation",
+  "column_break_pfvq",
+  "sla_status",
+  "communication_status",
+  "response_details_section",
+  "response_by",
+  "column_break_hpvj",
+  "first_response_time",
+  "first_responded_on",
+  "log_tab",
+  "status_change_log",
+  "activities_tab",
+  "tasks_section",
+  "task_list"
+ ],
+ "fields": [
+  {
+   "fieldname": "details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "deal_information_section",
+   "fieldtype": "Section Break",
+   "label": "Deal Information"
+  },
+  {
+   "default": "Today",
+   "fieldname": "register_date",
+   "fieldtype": "Date",
+   "label": "Register Date",
+   "reqd": 1
+  },
+  {
+   "default": "Qualification",
+   "fieldname": "status",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "CRM Deal Status",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "probability",
+   "fieldtype": "Percent",
+   "label": "Probability"
+  },
+  {
+   "fieldname": "annual_revenue",
+   "fieldtype": "Float",
+   "label": "Annual Revenue",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_enty",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "opportunity_id",
+   "fieldtype": "Data",
+   "label": "Opportunity ID",
+   "unique": 1
+  },
+  {
+   "fieldname": "deal_type",
+   "fieldtype": "Link",
+   "label": "Deal Type",
+   "options": "CRM Deal Type"
+  },
+  {
+   "fieldname": "from_contract",
+   "fieldtype": "Link",
+   "label": "From Contract",
+   "options": "CRM Contract"
+  },
+  {
+   "fetch_from": "customer_name.branch_head",
+   "fieldname": "deal_owner",
+   "fieldtype": "Link",
+   "label": "Deal Owner",
+   "options": "User"
+  },
+  {
+   "fieldname": "customer_information_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Information"
+  },
+  {
+   "fetch_from": "customer_hc.organization_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Link",
+   "label": "Customer Name",
+   "options": "CRM Organization"
+  },
+  {
+   "fetch_from": "customer_name.industry",
+   "fieldname": "industry",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Industry"
+  },
+  {
+   "fieldname": "column_break_ylzn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "customer_name.region",
+   "fieldname": "region",
+   "fieldtype": "Link",
+   "label": "Region",
+   "options": "Region Master"
+  },
+  {
+   "fetch_from": "customer_name.branch",
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Region Branches"
+  },
+  {
+   "fieldname": "subsidiary_information_section",
+   "fieldtype": "Section Break",
+   "label": "Subsidiary Information"
+  },
+  {
+   "fieldname": "organization",
+   "fieldtype": "Link",
+   "label": "Subsidiary",
+   "options": "Company"
+  },
+  {
+   "fieldname": "column_break_hevz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tab_7_tab",
+   "fieldtype": "Tab Break",
+   "label": "Customer Information"
+  },
+  {
+   "fieldname": "contact_information_section",
+   "fieldtype": "Section Break",
+   "label": "Contact Information"
+  },
+  {
+   "fetch_from": "customer_name.email",
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "customer_name.phone",
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone",
+   "read_only": 1
+  },
+  {
+   "fieldname": "address_information_section",
+   "fieldtype": "Section Break",
+   "label": "Address Information"
+  },
+  {
+   "fieldname": "customer_address",
+   "fieldtype": "Link",
+   "label": "Customer Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "column_break_booz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "shipping_address",
+   "fieldtype": "Link",
+   "label": "Shipping Address",
+   "options": "Address"
+  },
+  {
+   "depends_on": "eval: !doc.__islocal",
+   "fieldname": "address_and_contact_section",
+   "fieldtype": "Section Break",
+   "label": "Address and Contact"
+  },
+  {
+   "fieldname": "address_html",
+   "fieldtype": "HTML",
+   "label": "Address HTML"
+  },
+  {
+   "fieldname": "column_break_njvl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: !doc.__islocal",
+   "fieldname": "shipping_address_html",
+   "fieldtype": "HTML",
+   "label": "Shipping Address HTML"
+  },
+  {
+   "fieldname": "product_information_tab",
+   "fieldtype": "Tab Break",
+   "label": "Product Information"
+  },
+  {
+   "fieldname": "product_details",
+   "fieldtype": "Table",
+   "label": "Product Details",
+   "options": "Product Details"
+  },
+  {
+   "fieldname": "sla_tab",
+   "fieldtype": "Tab Break",
+   "label": "SLA",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sla",
+   "fieldtype": "Link",
+   "label": "SLA",
+   "options": "CRM Service Level Agreement"
+  },
+  {
+   "fieldname": "sla_creation",
+   "fieldtype": "Datetime",
+   "label": "SLA Creation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_pfvq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sla_status",
+   "fieldtype": "Select",
+   "label": "SLA Status",
+   "options": "\nFirst Response Due\nFailed\nFulfilled",
+   "read_only": 1
+  },
+  {
+   "default": "Open",
+   "fieldname": "communication_status",
+   "fieldtype": "Link",
+   "label": "Communication Status",
+   "options": "CRM Communication Status"
+  },
+  {
+   "fieldname": "response_details_section",
+   "fieldtype": "Section Break",
+   "label": "Response Details"
+  },
+  {
+   "fieldname": "response_by",
+   "fieldtype": "Datetime",
+   "label": "Response By",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_hpvj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "first_response_time",
+   "fieldtype": "Duration",
+   "label": "First Response Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "first_responded_on",
+   "fieldtype": "Datetime",
+   "label": "First Responded On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "log_tab",
+   "fieldtype": "Tab Break",
+   "label": "Log",
+   "read_only": 1
+  },
+  {
+   "fieldname": "status_change_log",
+   "fieldtype": "Table",
+   "label": "Status Change Log",
+   "options": "CRM Status Change Log"
+  },
+  {
+   "fieldname": "activities_tab",
+   "fieldtype": "Tab Break",
+   "label": "Activities"
+  },
+  {
+   "fieldname": "tasks_section",
+   "fieldtype": "Section Break",
+   "label": "Tasks"
+  },
+  {
+   "fieldname": "task_list",
+   "fieldtype": "HTML",
+   "label": "Task List"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-06-06 12:23:02.608220",
+ "modified_by": "Administrator",
+ "module": "FCRM",
+ "name": "Deal 2",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

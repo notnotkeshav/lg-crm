@@ -1,0 +1,600 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:opportunity_id",
+ "creation": "2023-11-06 17:56:25.210449",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "details_tab",
+  "deal_information_section",
+  "register_date",
+  "commision_date",
+  "status",
+  "probability",
+  "warranty_expiry_date",
+  "amc_expiry_date",
+  "warranty_amc_status",
+  "column_break_enty",
+  "opportunity_id",
+  "deal_category",
+  "deal_type",
+  "from_contract",
+  "deal_owner",
+  "reason",
+  "annual_revenue",
+  "customer_information_section",
+  "customer",
+  "customer_name",
+  "industry",
+  "column_break_ylzn",
+  "project",
+  "region",
+  "parent_vertical",
+  "branch",
+  "final_branch",
+  "final_region",
+  "subsidiary_information_section",
+  "organization",
+  "column_break_hevz",
+  "section_break_gqzg",
+  "lost_by_am",
+  "lost_by_alok",
+  "column_break_ddld",
+  "lost_by_rsm",
+  "deal_duplicate_information_section",
+  "last_duplicate_date",
+  "duplicate_trigger_date",
+  "column_break_gkuy",
+  "duplicate_count",
+  "from_duplicate",
+  "tab_7_tab",
+  "contact_information_section",
+  "email",
+  "column_break_obaw",
+  "phone",
+  "address_information_section",
+  "customer_address",
+  "address_html",
+  "column_break_booz",
+  "shipping_address",
+  "shipping_address_html",
+  "product_information_tab",
+  "product_details",
+  "section_break_lyzx",
+  "total_hp",
+  "hp_under_amc",
+  "column_break_kiut",
+  "total_tonnes",
+  "tonnes_under_amc",
+  "sla_tab",
+  "sla",
+  "sla_creation",
+  "column_break_pfvq",
+  "sla_status",
+  "communication_status",
+  "response_details_section",
+  "response_by",
+  "column_break_hpvj",
+  "first_response_time",
+  "first_responded_on",
+  "log_tab",
+  "status_change_log",
+  "activities_tab",
+  "tasks_section",
+  "task_list"
+ ],
+ "fields": [
+  {
+   "fieldname": "organization",
+   "fieldtype": "Link",
+   "label": "Subsidiary",
+   "options": "Company"
+  },
+  {
+   "depends_on": "eval! doc.status!=\"Sales\"",
+   "fieldname": "probability",
+   "fieldtype": "Percent",
+   "label": "Probability"
+  },
+  {
+   "fetch_from": "branch.branch_head",
+   "fetch_if_empty": 1,
+   "fieldname": "deal_owner",
+   "fieldtype": "Link",
+   "label": "Opportunity Owner",
+   "options": "User"
+  },
+  {
+   "fetch_from": "customer_name.email",
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "read_only": 1
+  },
+  {
+   "default": "Qualification",
+   "fieldname": "status",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "CRM Deal Status",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "sla_tab",
+   "fieldtype": "Tab Break",
+   "label": "SLA",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sla",
+   "fieldtype": "Link",
+   "label": "SLA",
+   "options": "CRM Service Level Agreement"
+  },
+  {
+   "fieldname": "response_by",
+   "fieldtype": "Datetime",
+   "label": "Response By",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_pfvq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sla_status",
+   "fieldtype": "Select",
+   "label": "SLA Status",
+   "options": "\nFirst Response Due\nFailed\nFulfilled",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sla_creation",
+   "fieldtype": "Datetime",
+   "label": "SLA Creation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "response_details_section",
+   "fieldtype": "Section Break",
+   "label": "Response Details"
+  },
+  {
+   "fieldname": "column_break_hpvj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "first_response_time",
+   "fieldtype": "Duration",
+   "label": "First Response Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "first_responded_on",
+   "fieldtype": "Datetime",
+   "label": "First Responded On",
+   "read_only": 1
+  },
+  {
+   "default": "Open",
+   "fieldname": "communication_status",
+   "fieldtype": "Link",
+   "label": "Communication Status",
+   "options": "CRM Communication Status"
+  },
+  {
+   "fetch_from": "customer_name.phone",
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone",
+   "read_only": 1
+  },
+  {
+   "fieldname": "log_tab",
+   "fieldtype": "Tab Break",
+   "label": "Log",
+   "read_only": 1
+  },
+  {
+   "fieldname": "status_change_log",
+   "fieldtype": "Table",
+   "label": "Status Change Log",
+   "options": "CRM Status Change Log"
+  },
+  {
+   "fetch_from": "customer.industry",
+   "fetch_if_empty": 1,
+   "fieldname": "industry",
+   "fieldtype": "Data",
+   "label": "Vertical"
+  },
+  {
+   "fieldname": "details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "deal_information_section",
+   "fieldtype": "Section Break",
+   "label": "Customer AMC Information"
+  },
+  {
+   "default": "Today",
+   "fieldname": "register_date",
+   "fieldtype": "Date",
+   "label": "Register Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_enty",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "deal_type",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Opportunity Type",
+   "options": "CRM Deal Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "from_contract",
+   "fieldtype": "Link",
+   "label": "From Contract",
+   "options": "CRM Contract",
+   "read_only": 1
+  },
+  {
+   "fieldname": "subsidiary_information_section",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Subsidiary Information"
+  },
+  {
+   "fieldname": "column_break_hevz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "customer.region",
+   "fieldname": "region",
+   "fieldtype": "Link",
+   "label": "Region",
+   "options": "Region Master"
+  },
+  {
+   "fetch_from": "customer.branch",
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Region Branches"
+  },
+  {
+   "fieldname": "tab_7_tab",
+   "fieldtype": "Tab Break",
+   "label": "Address & Contacts"
+  },
+  {
+   "fieldname": "customer_information_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Information"
+  },
+  {
+   "fetch_from": "customer.organization_name",
+   "fetch_if_empty": 1,
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Customer Name"
+  },
+  {
+   "fieldname": "column_break_ylzn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contact_information_section",
+   "fieldtype": "Section Break",
+   "label": "Contact Information"
+  },
+  {
+   "fieldname": "address_information_section",
+   "fieldtype": "Section Break",
+   "label": "Address Information"
+  },
+  {
+   "fetch_from": "customer.customer_primary_address",
+   "fieldname": "customer_address",
+   "fieldtype": "Link",
+   "label": "Customer Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "column_break_booz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "shipping_address",
+   "fieldtype": "Link",
+   "label": "Shipping Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "product_information_tab",
+   "fieldtype": "Tab Break",
+   "label": "Product Information"
+  },
+  {
+   "fieldname": "activities_tab",
+   "fieldtype": "Tab Break",
+   "label": "Activities"
+  },
+  {
+   "fieldname": "tasks_section",
+   "fieldtype": "Section Break",
+   "label": "Tasks"
+  },
+  {
+   "fieldname": "task_list",
+   "fieldtype": "HTML",
+   "label": "Task List"
+  },
+  {
+   "fieldname": "address_html",
+   "fieldtype": "HTML",
+   "label": "Address HTML"
+  },
+  {
+   "depends_on": "eval: !doc.__islocal",
+   "fieldname": "shipping_address_html",
+   "fieldtype": "HTML",
+   "label": "Shipping Address HTML"
+  },
+  {
+   "allow_bulk_edit": 1,
+   "fieldname": "product_details",
+   "fieldtype": "Table",
+   "label": "Product Details",
+   "options": "Product Details"
+  },
+  {
+   "fieldname": "total_hp",
+   "fieldtype": "Int",
+   "label": "Total HP"
+  },
+  {
+   "fieldname": "column_break_obaw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Service",
+   "fieldname": "deal_category",
+   "fieldtype": "Select",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Opportunity Category",
+   "options": "Service"
+  },
+  {
+   "fieldname": "opportunity_id",
+   "fieldtype": "Data",
+   "label": "Opportunity ID",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "deal_duplicate_information_section",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "deal duplicate information"
+  },
+  {
+   "fieldname": "last_duplicate_date",
+   "fieldtype": "Date",
+   "label": "last duplicate date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_gkuy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "duplicate_count",
+   "fieldtype": "Int",
+   "label": "duplicate count",
+   "read_only": 1
+  },
+  {
+   "fieldname": "warranty_expiry_date",
+   "fieldtype": "Date",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Warranty Expiry Date"
+  },
+  {
+   "depends_on": "eval:doc.deal_category==\"Service\"",
+   "fieldname": "amc_expiry_date",
+   "fieldtype": "Date",
+   "in_standard_filter": 1,
+   "label": "AMC Expiry Date"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Project ID (IL)",
+   "options": "Project"
+  },
+  {
+   "fieldname": "hp_under_amc",
+   "fieldtype": "Int",
+   "label": "HP Under AMC"
+  },
+  {
+   "fieldname": "duplicate_trigger_date",
+   "fieldtype": "Date",
+   "label": "Duplicate Triger Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "warranty_amc_status",
+   "fieldtype": "Select",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Warranty/AMC Status",
+   "options": "\nIN Warranty\nOUT Warranty\nAMC Active\nAMC Expired"
+  },
+  {
+   "fieldname": "from_duplicate",
+   "fieldtype": "Data",
+   "label": "From Duplicate",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Data",
+   "label": "Not Interested Reason",
+   "read_only": 1
+  },
+  {
+   "fieldname": "annual_revenue",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Total",
+   "precision": "2"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_gqzg",
+   "fieldtype": "Section Break",
+   "label": "Not Interested "
+  },
+  {
+   "fieldname": "lost_by_am",
+   "fieldtype": "Data",
+   "label": "Lost by AM",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ddld",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "lost_by_rsm",
+   "fieldtype": "Data",
+   "label": "Lost by RSM",
+   "read_only": 1
+  },
+  {
+   "fieldname": "lost_by_alok",
+   "fieldtype": "Data",
+   "label": "Lost by Alok",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Customer",
+   "options": "CRM Organization"
+  },
+  {
+   "fetch_from": "project.parent_vertical",
+   "fieldname": "parent_vertical",
+   "fieldtype": "Data",
+   "label": "Parent Vertical",
+   "read_only": 1
+  },
+  {
+   "fieldname": "commision_date",
+   "fieldtype": "Date",
+   "label": "Commission Date"
+  },
+  {
+   "fieldname": "section_break_lyzx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_kiut",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_tonnes",
+   "fieldtype": "Int",
+   "label": "Total Tons"
+  },
+  {
+   "fieldname": "tonnes_under_amc",
+   "fieldtype": "Int",
+   "label": "Tons Under AMC"
+  },
+  {
+   "fieldname": "final_branch",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Final Branch",
+   "options": "Region Branches"
+  },
+  {
+   "fieldname": "final_region",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Final Region",
+   "options": "Region Master"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "link_doctype": "CRM Quotation",
+   "link_fieldname": "deal"
+  }
+ ],
+ "modified": "2026-03-25 17:04:23.468909",
+ "modified_by": "khushi.rai@lgepartner.com",
+ "module": "FCRM",
+ "name": "CRM Deal",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

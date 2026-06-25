@@ -1,0 +1,61 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"1nr6UkvDiL\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h5\\\"><b>PORTAL</b></span>\",\"col\":12}},{\"id\":\"VgeWLYOuAS\",\"type\":\"paragraph\",\"data\":{\"text\":\"<b>SHORTCUTS</b>\",\"col\":12}},{\"id\":\"WuAL6gjc5M\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dashboard\",\"col\":3}},{\"id\":\"n9b6N5ebOj\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Opportunities\",\"col\":3}},{\"id\":\"sGHTXrludH\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Organizations\",\"col\":3}},{\"id\":\"uXZNCdqxy0\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"User Contacts\",\"col\":3}}]",
+ "creation": "2023-11-27 13:55:17.090361",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "filter",
+ "idx": 1,
+ "indicator_color": "",
+ "is_hidden": 0,
+ "label": "CRM",
+ "links": [],
+ "modified": "2026-03-12 13:48:56.477338",
+ "modified_by": "Administrator",
+ "module": "FCRM",
+ "name": "CRM",
+ "number_cards": [],
+ "owner": "shariq@frappe.io",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 3.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Opportunities",
+   "link_to": "CRM Deal",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "User Contacts",
+   "link_to": "Contact",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Dashboard",
+   "type": "URL",
+   "url": "http://10.101.0.165/dashboard"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Organizations",
+   "link_to": "CRM Organization",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "CRM"
+}

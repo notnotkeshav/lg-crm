@@ -265,8 +265,11 @@ scheduler_events = {
 #	"crm.auth.validate"
 # ]
 
+# Custom Field and Property Setter were exported here with `filters: []`, which
+# snapshots every record on the site - including customizations belonging to the
+# lg app. Those now live in lg (in the doctype schema for lg-owned doctypes, and
+# in lg/lg/custom/*.json for frappe/crm-owned ones), so syncing them from here as
+# well meant two apps racing to define the same field.
 fixtures = [
-    {"dt": "Custom Field", "filters": []},
-    {"dt": "Property Setter", "filters": []},
-    {"dt": "Client Script", "filters":[]}
+    {"dt": "Client Script", "filters": []}
 ]

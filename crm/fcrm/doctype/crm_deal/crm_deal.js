@@ -13,8 +13,11 @@ frappe.ui.form.on("CRM Deal", {
 					});
 
 					//  changes --- status 
-					frm.set_value("status", "Proposal/Quotation")
-					frm.save()
+					// Only advance from Qualification; never move a later-stage deal back
+					if (frm.doc.status === "Qualification") {
+						frm.set_value("status", "Proposal/Quotation")
+						frm.save()
+					}
 				});
 
 

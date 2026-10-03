@@ -1446,7 +1446,7 @@ def send_deal_notification_to_next_role(deal_name, current_level):
     next_user = None
 
     if current_level == "AM" and deal.region:
-        next_user = frappe.db.get_value("Region", deal.region, "region_head")
+        next_user = frappe.db.get_value("Region Master", deal.region, "region_head")
 
     elif current_level == "RSM":
         next_user = "alok.dave@lge.com"

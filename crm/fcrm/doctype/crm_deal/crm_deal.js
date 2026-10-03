@@ -41,7 +41,7 @@ frappe.ui.form.on("CRM Deal", {
 				// ===== GET REGION HEAD =====
 				if (frm.doc.region && status === "Lost by AM") {
 
-					frappe.db.get_value("Region", frm.doc.region, "region_head")
+					frappe.db.get_value("Region Master", frm.doc.region, "region_head")
 						.then(r => {
 							if (r.message && r.message.region_head === current_user) {
 								frm.add_custom_button(__('Interested'), () => handle_interested(frm));

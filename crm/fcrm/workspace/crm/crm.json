@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "CRM",
  "links": [],
- "modified": "2026-06-25 14:14:39.750324",
+ "modified": "2026-06-30 15:35:27.690962",
  "modified_by": "Administrator",
  "module": "FCRM",
  "name": "CRM",
@@ -36,17 +36,17 @@
   {
    "color": "Grey",
    "doc_view": "List",
-   "label": "User Contacts",
-   "link_to": "Contact",
-   "stats_filter": "[]",
-   "type": "DocType"
+   "label": "Dashboard",
+   "type": "URL",
+   "url": "https://lg.extensionerp.com/dashboard"
   },
   {
    "color": "Grey",
    "doc_view": "List",
-   "label": "Dashboard",
-   "type": "URL",
-   "url": "http://lg.local"
+   "label": "User Contacts",
+   "link_to": "Contact",
+   "stats_filter": "[]",
+   "type": "DocType"
   },
   {
    "color": "Grey",

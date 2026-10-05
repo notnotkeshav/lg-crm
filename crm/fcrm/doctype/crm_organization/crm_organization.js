@@ -1,76 +1,3 @@
-// Copyright (c) 2023, Frappe Technologies Pvt. Ltd. and contributors
-// For license information, please see license.txt
-
-// frappe.ui.form.on("CRM Organization", {
-// 	refresh(frm) {
-
-// 	},
-// });
-
-
-// Copyright (c) 2023, Frappe Technologies Pvt. Ltd. and contributors
-// frappe.ui.form.on('CRM Organization', {
-// 	organization_name: function (frm) {
-// 		console.log("Triggered organization_name field");
-// 		fetch_address(frm);
-// 	},
-// 	refresh: function (frm) {
-// 		console.log("Triggered refresh");
-// 		fetch_address(frm);
-// 	}
-// });
-
-// function fetch_address(frm) {
-
-// 	// Don’t run if the record is still unsaved
-// 	if (!frm.doc.name) return;
-
-// 	frappe.call({
-// 		method: 'frappe.client.get_list',
-// 		args: {
-// 			doctype: 'Address',
-// 			filters: [
-// 				// 1️⃣  match Dynamic Link back to this CRM Organization
-// 				['Dynamic Link', 'link_doctype', '=', 'CRM Organization'],
-// 				['Dynamic Link', 'link_name', '=', frm.doc.name],   // <- use doc.name!
-
-// 				// 2️⃣  only take Billing addresses
-// 				['Address', 'address_type', '=', 'Billing']
-// 			],
-// 			fields: [
-// 				'name', 'address_line1', 'address_line2',
-// 				'city', 'state', 'custom_pin_code', 'country'
-// 			]
-// 		},
-// 		callback({ message: addresses }) {
-
-// 			let html = '';
-
-// 			if (addresses && addresses.length) {
-// 				// Show the first Billing address (or loop if you prefer)
-// 				const addr = addresses[0];
-// 				html = `
-//                     <div style="margin-bottom:15px;
-//                                 border-bottom:1px solid #ccc;
-//                                 padding-bottom:10px;">
-//                         <strong>${addr.name}</strong><br>
-//                         ${addr.address_line1 || ''}<br>
-//                         ${addr.address_line2 || ''}<br>
-//                         ${addr.city || ''}, ${addr.state || ''}
-//                         - ${addr.custom_pin_code || ''}<br>
-//                         ${addr.country || ''}
-//                     </div>`;
-// 			} else {
-// 				html = '<p>No billing address found for this customer.</p>';
-// 			}
-
-// 			frm.set_df_property('address_html', 'options', html);
-// 			frm.refresh_field('address_html');
-// 		}
-// 	});
-// }
-
-
 frappe.ui.form.on('CRM Organization', {
 	refresh(frm) {
 		// Only run if document is saved
@@ -137,11 +64,10 @@ function render_address_card(frm) {
 				addresses.forEach(a => {
 					html += `
         <div class="address-card">
-            // <div class="addr-type-pill">${a.address_type || 'N/A'}</div>
             <span class="edit-icon" data-name="${a.name}" title="Edit">✏️</span>
 
             <div style="margin-top: 28px;">
-           <div><strong>${a.name} - ${a.address_type || ''}</strong></div>
+           <div><strong>${!a.address_type || a.name.endsWith(a.address_type) ? a.name : `${a.name} - ${a.address_type}`}</strong></div>
                 <div>${a.address_line1 || ''}</div>
                 <div>${a.address_line2 || ''}</div>
                 <div>${a.city || ''}, ${a.state || ''} – ${a.custom_pin_code || ''}</div>

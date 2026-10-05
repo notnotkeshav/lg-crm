@@ -218,7 +218,9 @@ def make_crm_deal(source_name, target_doc=None):
 		target.status = "Qualification"
 		target.series = "QT.YYYY.-"
 		target.deal_type = "Warranty AMC Conversion"
-	
+		target.customer = source.name
+		target.customer_address = get_default_address(source)
+
 	doclist = get_mapped_doc(
 		"CRM Organization",
 		source_name,
@@ -239,6 +241,27 @@ def make_crm_deal(source_name, target_doc=None):
 		set_missing_values
 	)
 	return doclist
+
+
+def get_default_address(org):
+	"""Primary address if set, else the first billing address linked to the org, else any linked address."""
+	if org.customer_primary_address:
+		return org.customer_primary_address
+
+	addresses = frappe.get_all(
+		"Address",
+		filters=[
+			["Dynamic Link", "link_doctype", "=", "CRM Organization"],
+			["Dynamic Link", "link_name", "=", org.name],
+			["disabled", "=", 0],
+		],
+		fields=["name", "address_type"],
+		order_by="`tabAddress`.creation asc",
+	)
+	billing = [a.name for a in addresses if a.address_type in ("Bill To", "Billing")]
+	if billing:
+		return billing[0]
+	return addresses[0].name if addresses else None
 
 import frappe
 from frappe import _

@@ -167,7 +167,6 @@ doc_events = {
 
 scheduler_events = {
     "daily": [
-        "crm.fcrm.doctype.crm_deal.api.auto_duplicate_expired_deals",
 		"crm.fcrm.doctype.crm_deal.crm_deal.check_warranty_conversion",
 		"crm.fcrm.doctype.crm_deal.crm_deal.set_warranty_out",
 

@@ -1641,11 +1641,12 @@ def set_warranty_out():
 
     opportunities = frappe.get_all(
         "CRM Deal",
-        filters={
-            "warranty_expiry_date": ["<", current_date],
-            "warranty_expiry_date": ["is", "set"],
-            "warranty_amc_status": ["!=", "OUT Warranty"],
-        },
+        filters=[
+            ["warranty_expiry_date", "is", "set"],
+            ["warranty_expiry_date", "<", current_date],
+            ["amc_expiry_date", "is", "not set"],
+            ["warranty_amc_status", "!=", "OUT Warranty"],
+        ],
         fields=["name"]
     )
 

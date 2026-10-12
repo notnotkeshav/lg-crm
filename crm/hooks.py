@@ -268,6 +268,8 @@ scheduler_events = {
 # lg app. Those now live in lg (in the doctype schema for lg-owned doctypes, and
 # in lg/lg/custom/*.json for frappe/crm-owned ones), so syncing them from here as
 # well meant two apps racing to define the same field.
-fixtures = [
-    {"dt": "Client Script", "filters": []}
-]
+#
+# Client Script had the same problem: crm is installed after lg, so on every
+# migrate its snapshot overwrote lg's newer copies (re-enabling scripts lg had
+# disabled). Client Scripts are exported only from lg (lg/fixtures/client_script.json).
+fixtures = []

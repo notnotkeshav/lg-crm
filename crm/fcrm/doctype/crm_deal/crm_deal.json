@@ -237,6 +237,7 @@
    "fieldname": "deal_type",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Opportunity Type",
    "options": "CRM Deal Type",
    "reqd": 1
@@ -329,6 +330,7 @@
   {
    "fieldname": "activities_tab",
    "fieldtype": "Tab Break",
+   "hidden": 1,
    "label": "Activities"
   },
   {
@@ -373,8 +375,6 @@
    "fieldname": "deal_category",
    "fieldtype": "Select",
    "in_filter": 1,
-   "in_list_view": 1,
-   "in_standard_filter": 1,
    "label": "Opportunity Category",
    "options": "Service"
   },
@@ -412,15 +412,12 @@
    "fieldname": "warranty_expiry_date",
    "fieldtype": "Date",
    "in_filter": 1,
-   "in_list_view": 1,
-   "in_standard_filter": 1,
    "label": "Warranty Expiry Date"
   },
   {
    "depends_on": "eval:doc.deal_category==\"Service\"",
    "fieldname": "amc_expiry_date",
    "fieldtype": "Date",
-   "in_standard_filter": 1,
    "label": "AMC Expiry Date"
   },
   {
@@ -508,6 +505,7 @@
    "fetch_from": "project.parent_vertical",
    "fieldname": "parent_vertical",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Parent Vertical",
    "read_only": 1
   },
@@ -556,7 +554,7 @@
    "link_fieldname": "deal"
   }
  ],
- "modified": "2026-07-23 10:14:06.702930",
+ "modified": "2026-10-07 12:08:04.846581",
  "modified_by": "Administrator",
  "module": "FCRM",
  "name": "CRM Deal",

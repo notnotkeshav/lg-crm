@@ -127,6 +127,7 @@
   {
    "fieldname": "dealer_tab",
    "fieldtype": "Tab Break",
+   "hidden": 1,
    "label": "Dealer"
   },
   {
@@ -161,6 +162,7 @@
   {
    "fieldname": "tab_4_tab",
    "fieldtype": "Tab Break",
+   "hidden": 1,
    "label": "Contracts"
   },
   {
@@ -272,13 +274,14 @@
    "fetch_from": "industry.parent_vertical",
    "fieldname": "parent_vertical",
    "fieldtype": "Data",
-   "in_standard_filter": 1,
+   "hidden": 1,
    "label": "Parent Vertical",
    "read_only": 1
   },
   {
    "fieldname": "projects_tab",
    "fieldtype": "Tab Break",
+   "hidden": 1,
    "label": "Projects"
   },
   {
@@ -327,7 +330,7 @@
  "image_field": "organization_logo",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-06-25 14:18:59.325698",
+ "modified": "2026-10-07 10:10:31.891812",
  "modified_by": "Administrator",
  "module": "FCRM",
  "name": "CRM Organization",

@@ -103,23 +103,23 @@ class CRMOrganization(Document):
 		# 	self.assign_agent(self.deal_owner)
 		pass
 
-	def before_save(self, method=None):
+	# def before_save(self, method=None):
 
-		if not self.organization_name:
-			return
+	# 	if not self.organization_name:
+	# 		return
 
-		existing = frappe.db.exists(
-			"CRM Organization",
-			{
-				"organization_name": self.organization_name,
-				"project":self.project,
-                "branch":self.branch,
-				"name": ["!=", self.name]   # current doc ko ignore karega (update case)
-			}
-		)
+	# 	existing = frappe.db.exists(
+	# 		"CRM Organization",
+	# 		{
+	# 			"organization_name": self.organization_name,
+	# 			"project":self.project,
+    #             "branch":self.branch,
+	# 			"name": ["!=", self.name]   # current doc ko ignore karega (update case)
+	# 		}
+	# 	)
 
-		if existing:
-			frappe.throw(f"Customer already exists: {self.organization_name}")
+	# 	if existing:
+	# 		frappe.throw(f"Customer already exists: {self.organization_name}")
 
 	def set_primary_contact(self, contact=None):
 		if not self.contacts:

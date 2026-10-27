@@ -23,13 +23,13 @@
    "fieldname": "parent_vertical",
    "fieldtype": "Select",
    "label": "Parent Vertical",
-   "options": "Hospital / IT\nResidence\nEducation\nOffice\nHotel/Factory"
+   "options": "Hospitality\nResidential\nFactory\nCorporate\nEducation"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-17 14:56:26.896704",
- "modified_by": "admin@himindia.com",
+ "modified": "2026-10-23 13:05:53.960941",
+ "modified_by": "Administrator",
  "module": "FCRM",
  "name": "CRM Industry",
  "naming_rule": "By fieldname",

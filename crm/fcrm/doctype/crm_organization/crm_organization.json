@@ -42,13 +42,7 @@
   "column_break_lnfg",
   "customer_primary_contact",
   "mobile_no",
-  "email_id",
-  "section_break_sdjv",
-  "project_info",
-  "section_break_gbeg",
-  "dealer_team",
-  "section_break_waam",
-  "contracts_information"
+  "email_id"
  ],
  "fields": [
   {
@@ -125,12 +119,6 @@
    "label": "Phone"
   },
   {
-   "fieldname": "dealer_team",
-   "fieldtype": "Table",
-   "label": "Dealer Team",
-   "options": "Dealer Team"
-  },
-  {
    "fetch_from": "branch.region",
    "fieldname": "region",
    "fieldtype": "Link",
@@ -152,12 +140,6 @@
    "fieldname": "tab_3_tab",
    "fieldtype": "Tab Break",
    "label": "Address Information"
-  },
-  {
-   "fieldname": "contracts_information",
-   "fieldtype": "Table",
-   "label": "Contracts Information",
-   "options": "Customer Contracts"
   },
   {
    "fetch_from": "branch.branch_name",
@@ -267,12 +249,6 @@
    "read_only": 1
   },
   {
-   "fieldname": "project_info",
-   "fieldtype": "Table",
-   "label": "Project Info",
-   "options": "Project Table"
-  },
-  {
    "fieldname": "contact_person",
    "fieldtype": "Data",
    "label": "Contact Person"
@@ -307,24 +283,12 @@
    "fieldname": "customer_details_tab",
    "fieldtype": "Tab Break",
    "label": "Customer Details"
-  },
-  {
-   "fieldname": "section_break_sdjv",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "section_break_gbeg",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "section_break_waam",
-   "fieldtype": "Section Break"
   }
  ],
  "image_field": "organization_logo",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-10-16 16:07:30.430646",
+ "modified": "2026-10-22 15:55:39.937428",
  "modified_by": "Administrator",
  "module": "FCRM",
  "name": "CRM Organization",

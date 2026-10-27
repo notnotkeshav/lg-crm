@@ -9,8 +9,6 @@
  "field_order": [
   "details_tab",
   "deal_information_section",
-  "register_date",
-  "commision_date",
   "status",
   "probability",
   "warranty_expiry_date",
@@ -64,10 +62,8 @@
   "product_details",
   "section_break_lyzx",
   "total_hp",
-  "hp_under_amc",
   "column_break_kiut",
   "total_tonnes",
-  "tonnes_under_amc",
   "sla_tab",
   "sla",
   "sla_creation",
@@ -221,13 +217,6 @@
    "fieldname": "deal_information_section",
    "fieldtype": "Section Break",
    "label": "Customer AMC Information"
-  },
-  {
-   "default": "Today",
-   "fieldname": "register_date",
-   "fieldtype": "Date",
-   "label": "Register Date",
-   "reqd": 1
   },
   {
    "fieldname": "column_break_enty",
@@ -427,11 +416,6 @@
    "options": "Project"
   },
   {
-   "fieldname": "hp_under_amc",
-   "fieldtype": "Int",
-   "label": "HP Under AMC"
-  },
-  {
    "fieldname": "duplicate_trigger_date",
    "fieldtype": "Date",
    "label": "Duplicate Triger Date",
@@ -510,11 +494,6 @@
    "read_only": 1
   },
   {
-   "fieldname": "commision_date",
-   "fieldtype": "Date",
-   "label": "Commission Date"
-  },
-  {
    "fieldname": "section_break_lyzx",
    "fieldtype": "Section Break"
   },
@@ -526,11 +505,6 @@
    "fieldname": "total_tonnes",
    "fieldtype": "Int",
    "label": "Total Tons"
-  },
-  {
-   "fieldname": "tonnes_under_amc",
-   "fieldtype": "Int",
-   "label": "Tons Under AMC"
   },
   {
    "fieldname": "final_branch",
@@ -554,7 +528,7 @@
    "link_fieldname": "deal"
   }
  ],
- "modified": "2026-10-07 12:08:04.846581",
+ "modified": "2026-10-22 14:42:01.691493",
  "modified_by": "Administrator",
  "module": "FCRM",
  "name": "CRM Deal",

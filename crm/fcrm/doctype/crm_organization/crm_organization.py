@@ -230,7 +230,8 @@ def make_crm_deal(source_name, target_doc=None):
 				"field_map": {
 					"Customer_HC": "Customer_HC",
 					"organization_name":"customer_name",
-					"custom_asm_name":"deal_owner"
+					"custom_asm_name":"deal_owner",
+                    "warranty_expiry_date":"warranty_expiry_date"
 				},
 				"validation": {
 					"docstatus": ["=", 0]

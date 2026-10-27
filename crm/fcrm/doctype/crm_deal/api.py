@@ -333,7 +333,6 @@ def duplicate_deal_service(docname):
     new_doc.set("duplicate_trigger_date",None)
     # Clear expiry dates from the duplicate
     new_doc.set("amc_expiry_date", None)
-    new_doc.set("register_date",None)
     new_doc.set("warranty_expiry_date", None)
     new_doc.set("warranty_amc_status",None)
     new_doc.set("from_duplicate",docname)

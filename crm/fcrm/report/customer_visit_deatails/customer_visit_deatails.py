@@ -8,7 +8,7 @@ def execute(filters=None):
     conditions = []
     values = {}
     # Admin/Super user check (Khushi Rai sees everything)
-    if user not in ["khushi.rai@lgepartner.com","Administrator"]:
+    if user not in ["khushi.rai@lgepartner.com","Administrator","atul.chaturvedi@lge.com","jonghan.park@lge.com","alok.dave@lge.com"]:
         conditions.append("vis.owner = %(user)s")
         values["user"] = user
 
